@@ -1,0 +1,19 @@
+[project]
+name = "python-get-weather"
+version = "0.1.0"
+description = "python script that calls National Weather Services API"
+authors = [
+    {name = "Vedant",email = "vsagar@wisc.edu"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
