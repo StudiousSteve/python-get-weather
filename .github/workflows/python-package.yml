@@ -54,6 +54,4 @@ jobs:
         pipx install poetry
         poetry env activate
         poetry install --only=security
-        pwd
-        echo 'hello, world!'
-        poetry run bandit -r .
+        poetry run bandit .
