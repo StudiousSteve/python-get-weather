@@ -54,4 +54,4 @@ jobs:
         pipx install poetry
         poetry env activate
         poetry install --only=security
-        poetry run bandit .
+        poetry run bandit -r .
