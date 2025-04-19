@@ -1,3 +1,3 @@
-## Python Get Weather
+## Get Weather: Python
 
 This python script queries the national weather service api to get california weather
