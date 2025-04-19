@@ -55,3 +55,27 @@ jobs:
         poetry env activate
         poetry install --only=security
         poetry run bandit -r .
+
+  get-weather:
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.13"]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        lsb_release -a
+        python -m pip install --upgrade pip
+        pip install pipx
+        pipx install poetry
+        poetry env activate
+        poetry install
+        poetry run python main.py
