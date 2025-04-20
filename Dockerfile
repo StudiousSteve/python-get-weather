@@ -5,10 +5,10 @@ FROM python:3.13-slim
 WORKDIR /python-get-weather
 
 # Install poetry
-RUN curl -sSL http://install.python-poetry.org | python3 - 
+RUN curl -sSL http://install.python-poetry.org | python3
 
 # Add poetry to path
-ENV PATH="root/.local/bin:$PATH"
+ENV PATH="root/local/bin:$PATH"
 
 # Copy depenedency files
 COPY pyproject.toml poetry.lock /python-get-weather/
