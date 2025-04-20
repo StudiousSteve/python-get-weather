@@ -19,6 +19,9 @@ jobs:
       with:
         python-version: 3.13
 
+    - name: Check PATH
+      run: echo $PATH
+
     - name: Install poetry
       run: |
         curl -sSL https://install.python-poetry.org | python3
@@ -26,7 +29,7 @@ jobs:
         source $GITHUB_PATH
 
     - name: Install dependencies
-      run: poetry install
+      run: ~/.local/bin/poetry install
 
     - name: Run Security Check
       run: | 
