@@ -20,4 +20,3 @@ build-backend = "poetry.core.masonry.api"
 package-mode = false
 [tool.poetry.group.security.dependencies]
 bandit = "1.8.3"
-

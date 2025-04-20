@@ -52,7 +52,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install pipx
         pipx install poetry
-        poetry env activate
         poetry install --only=security
         poetry run bandit -r .
 
@@ -76,6 +75,5 @@ jobs:
         python -m pip install --upgrade pip
         pip install pipx
         pipx install poetry
-        poetry env activate
         poetry install
         poetry run python main.py

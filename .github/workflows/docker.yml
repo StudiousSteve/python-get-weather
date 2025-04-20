@@ -1,0 +1,42 @@
+name: Docker CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.13
+
+    - name: Check PATH
+      run: echo $PATH
+
+    - name: Check HOME
+      run: echo $HOME
+
+    - name: Install poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3
+        echo "$HOME/local/bin">> $GITHUB_PATH
+
+    - name: Install dependencies
+      run: ~/.local/bin/poetry install
+
+    - name: Run Security Check
+      run: | 
+        poetry install --only=security
+        poetry run bandit -r .
+
+    - name: Build Docker Image
+      run: docker build -t docker-python-poetry .
