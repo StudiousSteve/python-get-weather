@@ -17,7 +17,7 @@ ENV PATH="root/local/bin:$PATH"
 COPY pyproject.toml poetry.lock /python-get-weather/
 
 # Install depenedencies
-RUN poetry install
+RUN /root/.local/bin/poetry install
 
 # Copy the application code
 COPY . /python-get-weather/
