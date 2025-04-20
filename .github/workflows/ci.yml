@@ -19,7 +19,6 @@ jobs:
       with:
         python-version: 3.13
   
-    # does this need poetry installation?
     - name: Build Docker Image
       run: docker build -t docker-python-poetry .
 
