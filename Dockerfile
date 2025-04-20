@@ -4,6 +4,9 @@ FROM python:3.13-slim
 # Set working dir in container
 WORKDIR /python-get-weather
 
+# Install curl and other dependencies
+RUN apt-get update && apt-get install -y curl
+
 # Install poetry
 RUN curl -sSL http://install.python-poetry.org | python3
 
