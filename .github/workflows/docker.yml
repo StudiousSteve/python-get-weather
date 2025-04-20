@@ -22,6 +22,9 @@ jobs:
     - name: Check PATH
       run: echo $PATH
 
+    - name: Check HOME
+      run: echo $HOME
+
     - name: Install poetry
       run: |
         curl -sSL https://install.python-poetry.org | python3
