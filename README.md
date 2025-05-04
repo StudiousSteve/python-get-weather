@@ -1,3 +1,3 @@
-## Get Weather: Python
+## Python Tiny API
 
-Lightweight Python API built around the National Weather Service (NWS) Web API.
+Lightweight Python Application Programming Interface (API) built around the National Weather Service (NWS) Web API.
