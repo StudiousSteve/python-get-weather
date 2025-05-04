@@ -1,3 +1,5 @@
 ## Python Tiny API
 
-Lightweight Python Application Programming Interface (API) built ontop the National Weather Service (NWS) Web API.
+Python API built for the National Weather Service (NWS) Web API.
+
+Python Tiny API is a lightweight python application programming interface built using fastapi. Under the hood, it calls the National Weather Service Web API. It uses Swagger to document api endpoint information.  
