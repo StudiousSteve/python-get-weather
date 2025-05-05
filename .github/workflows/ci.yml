@@ -21,7 +21,7 @@ jobs:
         run: docker build -t my-fastapi-app .
 
       - name: Run Container
-        run: docker run -d -p 8000:8000 my-fastapi-app
+        run: docker run -d -p 8000:8000 my-fastapi-app poetry run uvicorn api.main:app --host 0.0.0.0 --port 8000
 
       - name: Test API Endpoint
         run: curl http://localhost:8000
