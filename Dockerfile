@@ -20,7 +20,10 @@ COPY pyproject.toml poetry.lock /python-get-weather/
 RUN /root/.local/bin/poetry install
 
 # Copy the application code
-COPY . /python-get-weather/
+COPY . .
 
-# Run the application
-CMD ["poetry", "run", "python", "main.py"]
+# Expose port 8000 for FastAPI
+EXPOSE 8000
+
+# Run FastAPI app
+CMD ["poetry", "run", "uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
