@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y curl
 RUN curl -sSL http://install.python-poetry.org | python3
 
 # Add poetry to path
-ENV PATH="root/local/bin:$PATH"
+ENV PATH="root/.local/bin:$PATH"
 
 # Copy depenedency files
 COPY pyproject.toml poetry.lock /python-get-weather/
