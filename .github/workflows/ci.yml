@@ -25,7 +25,7 @@ jobs:
 
       - name: Check API Readiness
         run: sleep 5 && curl -s -o /dev/null -w "%{http_code}" http://localhost:8000
-      
+
   app-build:
     runs-on: ubuntu-latest
 
